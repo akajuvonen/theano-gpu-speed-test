@@ -12,4 +12,6 @@ if [ ! -d "$PARENTDIR/env" ]; then
   echo "Virtualenv not created, creating it..."
   virtualenv $PARENTDIR/env --no-site-packages
   echo "Virtualenv created in $PARENTDIR/env"
+else
+  echo "Virtualenv already created in $PARENTDIR/env"
 fi
