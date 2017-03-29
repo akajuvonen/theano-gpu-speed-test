@@ -1,0 +1,8 @@
+#!/bin/bash -e
+
+# The absolute path of the script
+SCRIPT=$(realpath $0)
+# The absolute path of the script directory
+SCRIPTDIR=$(dirname $SCRIPT)
+# The absolute parent path of the project
+PARENTDIR=$(dirname $SCRIPTDIR)
