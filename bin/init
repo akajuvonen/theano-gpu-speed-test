@@ -6,3 +6,10 @@ SCRIPT=$(realpath $0)
 SCRIPTDIR=$(dirname $SCRIPT)
 # The absolute parent path of the project
 PARENTDIR=$(dirname $SCRIPTDIR)
+
+# If virtualenv not created, create it
+if [ ! -d "$PARENTDIR/env" ]; then
+  echo "Virtualenv not created, creating it..."
+  virtualenv $PARENTDIR/env --no-site-packages
+  echo "Virtualenv created in $PARENTDIR/env"
+fi
