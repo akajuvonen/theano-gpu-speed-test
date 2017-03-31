@@ -18,3 +18,17 @@ if [ ! -d "$PARENTDIR/env" ]; then
 else
   echo "Virtualenv already created in $PARENTDIR/env"
 fi
+
+# Install dependencies if not already done (if file deps exists)
+if [ ! -f $PARENTDIR/env/deps ]; then
+  echo "Installing requirements..."
+  # Activate virtualenv environment
+  source $PARENTDIR/env/bin/activate
+  # Install deps
+  pip install -r $PARENTDIR/requirements.txt
+  # Create a file, meaning installation done
+  touch $PARENTDIR/env/deps
+  # Deactivate virtualenv
+  deactivate
+  echo "Requirements installed"
+fi
