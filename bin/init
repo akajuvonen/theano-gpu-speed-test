@@ -31,4 +31,6 @@ if [ ! -f $PARENTDIR/env/deps ]; then
   # Deactivate virtualenv
   deactivate
   echo "Requirements installed"
+else
+  echo "Requirements already installed"
 fi
