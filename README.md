@@ -1,8 +1,10 @@
 # theano-gpu-speed-test
-Testing how much gpu speeds up a small neural network calculation
+Testing how much gpu speeds up calculations in a simple example.
 
 ## Instructions
 
 ### Install dependencies
 
-You need to have python and pip installed. I also recommend using virtualenv. You can just type `make` to install dependencies listed in `requirements.txt`.
+Before beginning, you need python, pip and virtualenv. Everything else will be installed using pip in virtualenv. It does not mess with your system-wide python libraries.
+
+To automatically create a virtualenv environment and install dependencies if needed, run `bin/init` script. It will install dependencies in the virtual environment if not already done.
