@@ -17,9 +17,3 @@ if [ -d "$PARENTDIR/env" ]; then
 else
   echo "Virtualenv directory not found in $PARENTDIR/env"
 fi
-
-# Clean the output file if present
-if [ -f "$PARENTDIR/output.txt" ]; then
-  echo "Deleting file output.txt"
-  rm -v output.txt
-fi
