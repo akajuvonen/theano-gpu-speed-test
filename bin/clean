@@ -9,10 +9,17 @@ SCRIPTDIR=$(dirname $SCRIPT)
 # The absolute parent path of the project
 PARENTDIR=$(dirname $SCRIPTDIR)
 
+# Clean the virtualenv directory
 if [ -d "$PARENTDIR/env" ]; then
   echo "Deleting virtualenv directory"
   rm -rv $PARENTDIR/env
   echo "Virtualenv directory cleared"
 else
   echo "Virtualenv directory not found in $PARENTDIR/env"
+fi
+
+# Clean the output file if present
+if [ -f "$PARENTDIR/output.txt" ]; then
+  echo "Deleting file output.txt"
+  rm -v output.txt
 fi
