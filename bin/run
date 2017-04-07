@@ -22,3 +22,11 @@ source $PARENTDIR/env/bin/activate
 # This way we can capture and parse error messages by theano
 OUTPUT=$(python src/theano_test.py 2>&1)
 echo $OUTPUT
+
+REGEX="unsupported GNU version"
+if [[ $OUTPUT =~ $REGEX ]];
+then
+  echo found
+else
+  echo "not found"
+fi
