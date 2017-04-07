@@ -23,10 +23,10 @@ source $PARENTDIR/env/bin/activate
 OUTPUT=$(python src/theano_test.py 2>&1)
 echo $OUTPUT
 
+# Check output if GNU version is supported
 REGEX="unsupported GNU version"
 if [[ $OUTPUT =~ $REGEX ]];
 then
-  echo found
-else
-  echo "not found"
+  echo "ERROR: Use gcc and g++ versions 5 or earlier"
+  exit 1
 fi
