@@ -21,7 +21,6 @@ source $PARENTDIR/env/bin/activate
 # The 2>&1 is needed to redirect stderr to stdout
 # This way we can capture and parse error messages by theano
 OUTPUT=$(python src/theano_test.py 2>&1)
-echo $OUTPUT
 
 # Check output if GNU version is supported
 REGEX="unsupported GNU version"
