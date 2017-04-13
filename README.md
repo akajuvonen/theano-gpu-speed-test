@@ -11,7 +11,7 @@ To automatically create a virtualenv environment and install dependencies if nee
 
 ### Running the script
 
-`bin/run` runs the script (script is TODO). Dependencies are also installed if not already done.
+`bin/run` runs the script. Dependencies are also installed if not already done. It is not necessary to enter virtualenv environment before running, the script will enter and exit automatically. Your system-wide Python libraries are left untouched.
 
 ### Clear virtual environment
 
