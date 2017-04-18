@@ -1,0 +1,4 @@
+name: gpuspeedtest
+dependencies:
+  - theano
+  - pygpu
