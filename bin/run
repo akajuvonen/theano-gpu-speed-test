@@ -29,3 +29,6 @@ then
   echo "ERROR: Use gcc and g++ versions 5 or earlier"
   exit 1
 fi
+
+# Otherwise print output
+echo $OUTPUT
