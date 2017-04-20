@@ -1,21 +1,7 @@
 #!/bin/bash -e
 
-# The following gets the absolute path of the project.
-# It works regardless of where you run the init script from.
-# The absolute path of the script
-SCRIPT=$(realpath $0)
-# The absolute path of the script directory
-SCRIPTDIR=$(dirname $SCRIPT)
-# The absolute parent path of the project
-PARENTDIR=$(dirname $SCRIPTDIR)
-
-# Run the init script to check for virtualenv and dependencies
-$PARENTDIR/bin/init
-
-# Set virtualenv and pythonpath to run the program
-cd $PARENTDIR
-export PYTHONPATH=.
-source $PARENTDIR/env/bin/activate
+# Activate conda environment
+source activate gpuspeedtest
 
 # Run the file
 # The 2>&1 is needed to redirect stderr to stdout
@@ -32,3 +18,6 @@ fi
 
 # Otherwise print output
 echo $OUTPUT
+
+# Deactivate conda environment
+source deactivate
