@@ -1,19 +1,4 @@
 #!/bin/bash -e
 
-# The following gets the absolute path of the project.
-# It works regardless of where you run the init script from.
-# The absolute path of the script
-SCRIPT=$(realpath $0)
-# The absolute path of the script directory
-SCRIPTDIR=$(dirname $SCRIPT)
-# The absolute parent path of the project
-PARENTDIR=$(dirname $SCRIPTDIR)
-
-# Clean the virtualenv directory
-if [ -d "$PARENTDIR/env" ]; then
-  echo "Deleting virtualenv directory"
-  rm -rv $PARENTDIR/env
-  echo "Virtualenv directory cleared"
-else
-  echo "Virtualenv directory not found in $PARENTDIR/env"
-fi
+# Remove conda environment
+conda remove --name gpuspeedtest --all
