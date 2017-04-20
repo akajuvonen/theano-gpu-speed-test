@@ -1,36 +1,4 @@
 #!/bin/bash -e
 
-# The following gets the absolute path of the project.
-# It works regardless of where you run the init script from.
-# The absolute path of the script
-SCRIPT=$(realpath $0)
-# The absolute path of the script directory
-SCRIPTDIR=$(dirname $SCRIPT)
-# The absolute parent path of the project
-PARENTDIR=$(dirname $SCRIPTDIR)
-
-# If virtualenv not created, create it.
-# Otherwise just print confirmation that it already exists.
-if [ ! -d "$PARENTDIR/env" ]; then
-  echo "Virtualenv not created, creating it..."
-  virtualenv $PARENTDIR/env --no-site-packages
-  echo "Virtualenv created in $PARENTDIR/env"
-else
-  echo "Virtualenv already created in $PARENTDIR/env"
-fi
-
-# Install dependencies if not already done (if file deps exists)
-if [ ! -f $PARENTDIR/env/deps ]; then
-  echo "Installing requirements..."
-  # Activate virtualenv environment
-  source $PARENTDIR/env/bin/activate
-  # Install deps
-  pip install -r $PARENTDIR/requirements.txt
-  # Create a file, meaning installation done
-  touch $PARENTDIR/env/deps
-  # Deactivate virtualenv
-  deactivate
-  echo "Requirements installed"
-else
-  echo "Requirements already installed"
-fi
+# Create conda environment from file
+conda env create -f environment.yml
