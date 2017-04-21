@@ -8,14 +8,6 @@ source activate gpuspeedtest
 # This way we can capture and parse error messages by theano
 OUTPUT=$(THEANO_FLAGS=cuda.root=/usr/local/cuda,device=cuda python src/theano_test.py 2>&1)
 
-# Check output if GNU version is supported
-REGEX="unsupported GNU version"
-if [[ $OUTPUT =~ $REGEX ]];
-then
-  echo "ERROR: Use gcc and g++ versions 5 or earlier"
-  exit 1
-fi
-
 # Otherwise print output
 echo $OUTPUT
 
