@@ -1,5 +1,7 @@
 #!/bin/bash -e
 
+echo "NOTE: If you get CondaEnvironmentNotFoundError, run bin/init first"
+
 # Activate conda environment
 source activate gpuspeedtest
 
