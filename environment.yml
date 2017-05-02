@@ -1,5 +1,8 @@
 name: gpuspeedtest
 dependencies:
+  - numpy
+  - scipy
+  - mkl
   - python=3.6
   - theano
   - pygpu
