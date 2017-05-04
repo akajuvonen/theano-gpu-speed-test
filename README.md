@@ -9,10 +9,12 @@ NOTE: Tested on Ubuntu 17.04.
 
 First, you need Python and Conda. I recommend [MiniConda](https://conda.io/miniconda.html). In addition, [CUDA](https://developer.nvidia.com/cuda-downloads) and [CuDNN](https://developer.nvidia.com/cudnn) must be installed. You need a free NVidia developer account for CuDNN. Then just run `bin/init` to make a Conda virtual environment with required dependencies.
 
+Configuring CUDA and Theano might sometimes be a lot of work. However, it must be done and everything has to work prior to running the scripts.
+
 ### Run the analysis
 
 TODO: Not finished yet. Use `bin/run` to actually run the analysis. The init script must be run before this, otherwise it will just print an error.
 
 ### Cleaning
 
-In order to clean the virtual environment, use `bin/clean`.
+In order to clean the virtual environment, use `bin/clean`. If you want to run the analysis again, use `bin/init` before that.
