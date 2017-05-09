@@ -11,5 +11,10 @@ def main():
   z = x + y
   f = function([x, y], z)
 
+  # Add two random matrices together
+  m1 = np.random.rand(10, 10)
+  m2 = np.random.rand(10, 10)
+  f(m1, m2)
+
 if __name__=="__main__":
   main()
