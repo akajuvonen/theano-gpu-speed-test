@@ -14,7 +14,8 @@ def main():
   # Add two random matrices together
   m1 = np.random.rand(10, 10)
   m2 = np.random.rand(10, 10)
-  f(m1, m2)
+  result = f(m1, m2)
+  print(result)
 
 if __name__=="__main__":
   main()
