@@ -15,7 +15,6 @@ def main():
     m1 = np.random.rand(10, 10)
     m2 = np.random.rand(10, 10)
     result = f(m1, m2)
-    print(result)
 
 if __name__=="__main__":
   main()
