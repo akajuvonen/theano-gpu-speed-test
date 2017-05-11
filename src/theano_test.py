@@ -4,6 +4,7 @@ import numpy as np
 import theano.tensor as T
 from theano import function
 
+
 def main():
     # A simple theano function to multiply matrices
     x = T.dmatrix('x')
@@ -17,5 +18,5 @@ def main():
         m2 = np.random.rand(1000, 1000)
         result = f(m1, m2)
 
-if __name__=="__main__":
-  main()
+if __name__ == "__main__":
+    main()
