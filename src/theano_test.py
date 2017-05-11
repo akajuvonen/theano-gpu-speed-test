@@ -5,13 +5,13 @@ import theano.tensor as T
 from theano import function
 
 def main():
-    # A simple theano function to add to matrices
+    # A simple theano function to multiply matrices
     x = T.dmatrix('x')
     y = T.dmatrix('y')
-    z = x + y
+    z = x * y
     f = function([x, y], z)
 
-    # Add two random matrices together
+    # Multiply two random matrices
     m1 = np.random.rand(10, 10)
     m2 = np.random.rand(10, 10)
     result = f(m1, m2)
