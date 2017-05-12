@@ -13,7 +13,7 @@ def main():
     f = function([x, y], z)
 
     # Multiply two random matrices
-    for i in range(1000):
+    for i in range(100):
         m1 = np.random.rand(1000, 1000)
         m2 = np.random.rand(1000, 1000)
         result = f(m1, m2)
