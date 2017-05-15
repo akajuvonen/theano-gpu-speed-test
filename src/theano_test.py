@@ -13,10 +13,9 @@ def main():
     f = function([x, y], z)
 
     # Multiply two random matrices
-    for i in range(100):
-        m1 = np.random.rand(1000, 1000)
-        m2 = np.random.rand(1000, 1000)
-        result = f(m1, m2)
+    m1 = np.random.rand(10000, 10000)
+    m2 = np.random.rand(10000, 10000)
+    result = f(m1, m2)
 
 if __name__ == "__main__":
     main()
