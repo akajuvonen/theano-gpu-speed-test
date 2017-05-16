@@ -8,12 +8,12 @@ source activate gpuspeedtest
 # Use the CPU
 echo "--- Using CPU ---"
 export THEANO_FLAGS='device=cpu'
-time python src/theano_test.py
+python src/theano_test.py
 
 # Use the GPU
 echo "--- Using GPU ---"
 export THEANO_FLAGS='device=cuda'
-time python src/theano_test.py
+python src/theano_test.py
 
 # Deactivate conda environment
 source deactivate
