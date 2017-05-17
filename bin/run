@@ -6,7 +6,7 @@ echo "NOTE: If you get CondaEnvironmentNotFoundError, run bin/init first"
 source activate gpuspeedtest
 
 # Run the script
-python src/theano_test.py
+python src/theano_process.py
 
 # Deactivate conda environment
 source deactivate
