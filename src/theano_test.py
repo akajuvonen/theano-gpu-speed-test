@@ -8,7 +8,7 @@ import numpy as np
 import time
 
 
-def process(f):
+def process():
     """Processes some calculations with or without gpu depending on config.
     """
     # A simple theano function to multiply matrices
@@ -17,20 +17,23 @@ def process(f):
     z = x * y
     f = function([x, y], z)
 
+    # Start time
+    time0 = time.time()
+
     # Multiply two random matrices
     m1 = np.random.rand(10000, 10000)
     m2 = np.random.rand(10000, 10000)
     result = f(m1, m2)
 
-
-def main():
-    # Start time
-    time0 = time.time()
-    process(f)
     # End time
     time1 = time.time()
-    # Elapsed time
-    print('Elapsed time: %f' % (time1 - time0))
+    
+    # Return elapsed time
+    return (time1 - time0)
+
+def main():
+    timedelta = process()
+    print('Elapsed time: %f' % timedelta)
 
 if __name__ == "__main__":
     main()
