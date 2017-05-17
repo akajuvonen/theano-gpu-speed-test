@@ -10,9 +10,13 @@ import time
 
 def process(f):
     """Processes some calculations with or without gpu depending on config.
-    Arguments:
-    f -- Theano function to Use
     """
+    # A simple theano function to multiply matrices
+    x = T.dmatrix('x')
+    y = T.dmatrix('y')
+    z = x * y
+    f = function([x, y], z)
+
     # Multiply two random matrices
     m1 = np.random.rand(10000, 10000)
     m2 = np.random.rand(10000, 10000)
@@ -20,12 +24,6 @@ def process(f):
 
 
 def main():
-    # A simple theano function to multiply matrices
-    x = T.dmatrix('x')
-    y = T.dmatrix('y')
-    z = x * y
-    f = function([x, y], z)
-
     # Start time
     time0 = time.time()
     process(f)
