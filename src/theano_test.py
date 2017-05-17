@@ -8,6 +8,10 @@ import time
 
 
 def process(f):
+    """Processes some calculations with or without gpu depending on config.
+    Arguments:
+    f -- Theano function to Use
+    """
     # Multiply two random matrices
     m1 = np.random.rand(10000, 10000)
     m2 = np.random.rand(10000, 10000)
@@ -27,7 +31,7 @@ def main():
     # End time
     time1 = time.time()
     # Elapsed time
-    print('Elapsed time with cpu: %f' % (time1 - time0))
+    print('Elapsed time: %f' % (time1 - time0))
 
 if __name__ == "__main__":
     main()
