@@ -10,6 +10,8 @@ import time
 
 def process():
     """Processes some calculations with or without gpu depending on config.
+    Returns:
+    The elapsed time
     """
     # A simple theano function to multiply matrices
     x = T.dmatrix('x')
@@ -27,7 +29,7 @@ def process():
 
     # End time
     time1 = time.time()
-    
+
     # Return elapsed time
     return (time1 - time0)
 
