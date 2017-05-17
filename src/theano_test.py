@@ -7,6 +7,13 @@ from theano import config
 import time
 
 
+def process(f):
+    # Multiply two random matrices
+    m1 = np.random.rand(10000, 10000)
+    m2 = np.random.rand(10000, 10000)
+    result = f(m1, m2)
+
+
 def main():
     # A simple theano function to multiply matrices
     x = T.dmatrix('x')
@@ -16,10 +23,7 @@ def main():
 
     # Start time
     time0 = time.time()
-    # Multiply two random matrices
-    m1 = np.random.rand(10000, 10000)
-    m2 = np.random.rand(10000, 10000)
-    result = f(m1, m2)
+    process(f)
     # End time
     time1 = time.time()
     # Elapsed time
