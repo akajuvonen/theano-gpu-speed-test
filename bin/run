@@ -5,14 +5,7 @@ echo "NOTE: If you get CondaEnvironmentNotFoundError, run bin/init first"
 # Activate conda environment
 source activate gpuspeedtest
 
-# Use the CPU
-echo "--- Using CPU ---"
-export THEANO_FLAGS='device=cpu'
-python src/theano_test.py
-
-# Use the GPU
-echo "--- Using GPU ---"
-export THEANO_FLAGS='device=cuda'
+# Run the script
 python src/theano_test.py
 
 # Deactivate conda environment
