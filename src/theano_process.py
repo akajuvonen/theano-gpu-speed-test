@@ -5,6 +5,7 @@ from theano import function
 
 import numpy as np
 import time
+import os
 
 
 def process(q):
@@ -14,6 +15,7 @@ def process(q):
     Returns:
     The elapsed time
     """
+    print(os.environ['THEANO_FLAGS'])
     # A simple theano function to multiply matrices
     x = T.dmatrix('x')
     y = T.dmatrix('y')
