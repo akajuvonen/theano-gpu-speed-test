@@ -1,21 +1,29 @@
 #!/urs/bin/env python
 
-import theano.tensor as T
-from theano import function
-
 import numpy as np
 import time
 import os
 
 
-def process(q):
+def process(q,use_gpu):
     """Processes some calculations with or without gpu depending on config.
     Arguments:
     q -- The multiprocessing queue
+    use_gpu -- Boolean, if True, uses gpu
     Returns:
     The elapsed time
     """
-    print(os.environ['THEANO_FLAGS'])
+    if use_gpu:
+        os.environ['THEANO_FLAGS'] = 'device=cuda'
+        print('--- USING GPU ---')
+    else:
+        os.environ['THEANO_FLAGS'] = 'device=cpu'
+        print('--- USING CPU ---')
+
+    # Have to import after setting the THEANO_FLAGS param
+    import theano.tensor as T
+    from theano import function
+
     # A simple theano function to multiply matrices
     x = T.dmatrix('x')
     y = T.dmatrix('y')
