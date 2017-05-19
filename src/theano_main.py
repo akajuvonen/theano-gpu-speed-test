@@ -8,6 +8,7 @@ from multiprocessing import Process, Queue
 def main():
     # Run theano processing and print elapsed time
     # CPU
+    print('--- USING CPU ---')
     os.environ['THEANO_FLAGS'] = 'device=cpu'
     q = Queue()
     p = Process(target=process, args=(q,))
@@ -15,13 +16,16 @@ def main():
     p.join()
     timecpu = q.get()
     # GPU
+    print('--- USING GPU ---')
     os.environ['THEANO_FLAGS'] = 'device=cuda'
-    #time2 = process()
+    q = Queue()
+    p = Process(target=process, args=(q,))
+    p.start()
+    p.join()
+    timegpu = q.get()
     # Print times
-    # NOTE: This will not work yet, need to spawn separate Processes
-    # that init theano again
     print('Time used with CPU: %f' % timecpu)
-    #print('Time used with GPU: %f' % time2)
+    print('Time used with GPU: %f' % timegpu)
 
 
 if __name__ == "__main__":
