@@ -8,8 +8,10 @@ import numpy as np
 import time
 
 
-def process():
+def process(q):
     """Processes some calculations with or without gpu depending on config.
+    Arguments:
+    q -- The multiprocessing queue
     Returns:
     The elapsed time
     """
@@ -31,11 +33,4 @@ def process():
     time1 = time.time()
 
     # Return elapsed time
-    return (time1 - time0)
-
-def main():
-    timedelta = process()
-    print('Elapsed time: %f' % timedelta)
-
-if __name__ == "__main__":
-    main()
+    q.put(time1 - time0)
