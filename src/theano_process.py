@@ -21,7 +21,6 @@ def process(q,use_gpu):
         print('--- USING CPU ---')
 
     # Have to import after setting the THEANO_FLAGS param
-    import theano.tensor as T
     from theano import function, shared
 
     # A simple theano function to multiply matrices
@@ -34,7 +33,7 @@ def process(q,use_gpu):
 
     # Repeat the multiplication
     for i in range(1000):
-        result = f()
+        f()
 
     # End time
     time1 = time.time()
