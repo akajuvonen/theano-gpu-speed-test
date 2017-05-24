@@ -22,21 +22,19 @@ def process(q,use_gpu):
 
     # Have to import after setting the THEANO_FLAGS param
     import theano.tensor as T
-    from theano import function
+    from theano import function, shared
 
     # A simple theano function to multiply matrices
-    x = T.dmatrix('x')
-    y = T.dmatrix('y')
-    z = x * y
-    f = function([x, y], z)
+    x = shared(np.random.rand(1000, 1000))
+    y = shared(np.random.rand(1000, 1000))
+    f = function([], x * y)
 
     # Start time
     time0 = time.time()
 
-    # Multiply two random matrices
-    m1 = np.random.rand(10000, 10000)
-    m2 = np.random.rand(10000, 10000)
-    result = f(m1, m2)
+    # Repeat the multiplication
+    for i in range(1000):
+        result = f()
 
     # End time
     time1 = time.time()
