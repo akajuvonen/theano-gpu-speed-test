@@ -5,7 +5,7 @@ import time
 import os
 
 
-def process(q,use_gpu):
+def process(q, use_gpu):
     """Processes some calculations with or without gpu depending on config.
     Arguments:
     q -- The multiprocessing queue
