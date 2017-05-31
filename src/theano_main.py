@@ -11,12 +11,14 @@ def main():
     p = Process(target=process, args=(q,False))
     p.start()
     p.join()
+    # The time used for cpu analysis
     timecpu = q.get()
     # GPU
     q = Queue()
     p = Process(target=process, args=(q,True))
     p.start()
     p.join()
+    # The time used for gpu analysis
     timegpu = q.get()
     # Print times
     print('Time used with CPU: %f' % timecpu)
