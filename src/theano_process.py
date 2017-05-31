@@ -14,10 +14,10 @@ def process(q, use_gpu):
     The elapsed time
     """
     if use_gpu:
-        os.environ['THEANO_FLAGS'] = 'device=cuda'
+        os.environ['THEANO_FLAGS'] = 'device=cuda,floatX=float32'
         print('--- USING GPU ---')
     else:
-        os.environ['THEANO_FLAGS'] = 'device=cpu'
+        os.environ['THEANO_FLAGS'] = 'device=cpu,floatX=float32'
         print('--- USING CPU ---')
 
     # Have to import after setting the THEANO_FLAGS param
