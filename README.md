@@ -15,6 +15,14 @@ Configuring CUDA and Theano might sometimes be a lot of work. However, it must b
 
 Use `bin/run` to actually run the analysis. The init script must be run before this, otherwise it will just print an error.
 
+The analysis performs an element-wise addition of two random matrices several times. After completion it will print the elapsed times in the following way:
+```
+----- RESULTS -----
+Time used with CPU: 1.407127
+Time used with GPU: 0.022818
+GPU was 61.67 times faster
+```
+
 ### Cleaning
 
 In order to clean the virtual environment, use `bin/clean`. If you want to run the analysis again, use `bin/init` before that.
