@@ -14,18 +14,18 @@ def process(q, use_gpu):
     The elapsed time
     """
     if use_gpu:
-        os.environ['THEANO_FLAGS'] = 'device=cuda,floatX=float32'
+        os.environ['THEANO_FLAGS'] = 'device=cuda'
         print('--- USING GPU ---')
     else:
-        os.environ['THEANO_FLAGS'] = 'device=cpu,floatX=float32'
+        os.environ['THEANO_FLAGS'] = 'device=cpu'
         print('--- USING CPU ---')
 
     # Have to import after setting the THEANO_FLAGS param
     import theano
     import theano.tensor as T
 
-    m = np.random.rand(1000, 1000)
-    n = np.random.rand(1000, 1000)
+    m = np.random.rand(1000, 1000).astype('float32')
+    n = np.random.rand(1000, 1000).astype('float32')
 
     tm = theano.shared(m)
     tn = theano.shared(n)
