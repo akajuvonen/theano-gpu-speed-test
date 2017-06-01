@@ -24,13 +24,22 @@ def process(q, use_gpu):
     import theano
     import theano.tensor as T
 
+    # Random matrices
     m = np.random.rand(1000, 1000).astype('float32')
     n = np.random.rand(1000, 1000).astype('float32')
+    # The output variable, zeros for now
+    y = np.zeros((1000, 1000)).astype('float32')
 
-    tm = theano.shared(m)
-    tn = theano.shared(n)
+    # Make these into theano shared variables, stored in GPU
+    t_m = theano.shared(m)
+    t_n = theano.shared(n)
+    t_y = theano.shared(y)
 
-    f = theano.function([], tm * tn)
+    # Function for element-wise addition
+    t_add = T.add(t_m, t_n)
+
+    # Update the output variable using the function
+    f = theano.function(inputs=[], updates={t_y : t_add})
 
     # Start time
     time0 = time.time()
