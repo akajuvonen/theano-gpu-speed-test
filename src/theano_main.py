@@ -23,6 +23,7 @@ def main():
     # Print times
     print('Time used with CPU: %f' % timecpu)
     print('Time used with GPU: %f' % timegpu)
+    print("GPU was %.2f times faster" % (timecpu / timegpu))
 
 
 if __name__ == "__main__":
