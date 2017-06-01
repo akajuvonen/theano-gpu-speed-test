@@ -21,15 +21,16 @@ def process(q, use_gpu):
         print('--- USING CPU ---')
 
     # Have to import after setting the THEANO_FLAGS param
-    from theano import function, shared
+    import theano
+    import theano.tensor as T
 
     m = np.random.rand(1000, 1000)
     n = np.random.rand(1000, 1000)
 
-    tm = shared(m)
-    tn = shared(n)
+    tm = theano.shared(m)
+    tn = theano.shared(n)
 
-    f = function([], tm * tn)
+    f = theano.function([], tm * tn)
 
     # Start time
     time0 = time.time()
