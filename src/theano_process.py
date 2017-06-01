@@ -23,10 +23,13 @@ def process(q, use_gpu):
     # Have to import after setting the THEANO_FLAGS param
     from theano import function, shared
 
-    # A simple theano function to multiply matrices
-    x = shared(np.random.rand(1000, 1000))
-    y = shared(np.random.rand(1000, 1000))
-    f = function([], x * y)
+    m = np.random.rand(1000, 1000)
+    n = np.random.rand(1000, 1000)
+
+    tm = shared(m)
+    tn = shared(n)
+
+    f = function([], tm * tn)
 
     # Start time
     time0 = time.time()
