@@ -21,6 +21,7 @@ def main():
     # The time used for gpu analysis
     timegpu = q.get()
     # Print times
+    print('----- RESULTS -----')
     print('Time used with CPU: %f' % timecpu)
     print('Time used with GPU: %f' % timegpu)
     print("GPU was %.2f times faster" % (timecpu / timegpu))
