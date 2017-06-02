@@ -39,7 +39,7 @@ def process(q, use_gpu):
     t_add = T.add(t_m, t_n)
 
     # Update the output variable using the function
-    f = theano.function(inputs=[], updates={t_y : t_add})
+    f = theano.function(inputs=[], updates={t_y: t_add})
 
     # Start time
     time0 = time.time()
