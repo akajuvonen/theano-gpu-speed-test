@@ -8,14 +8,14 @@ def main():
     # Run theano processing and print elapsed time
     # CPU
     q = Queue()
-    p = Process(target=process, args=(q,False))
+    p = Process(target=process, args=(q, False))
     p.start()
     p.join()
     # The time used for cpu analysis
     timecpu = q.get()
     # GPU
     q = Queue()
-    p = Process(target=process, args=(q,True))
+    p = Process(target=process, args=(q, True))
     p.start()
     p.join()
     # The time used for gpu analysis
