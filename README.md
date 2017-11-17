@@ -6,12 +6,14 @@ Testing how much gpu speeds up calculations in a simple example.
 ### Install dependencies
 
 NOTE: Tested on Ubuntu 17.04. Should work on modern Linux distributions.
+Also: Theano is now [no longer actively updated](https://groups.google.com/forum/m/#!topic/theano-dev/gCBAhE3Sb_8).
+The program should still work.
 
 First, you need Python and Conda. I recommend [MiniConda](https://conda.io/miniconda.html). In addition, [CUDA](https://developer.nvidia.com/cuda-downloads) and [CuDNN](https://developer.nvidia.com/cudnn) must be installed. You need a free NVidia developer account for CuDNN. Then just run `bin/init` to make a Conda virtual environment with required dependencies.
 
 Configuring CUDA can sometimes be a bit of work. However, it must be done and everything has to work prior to running the scripts. On some Linux distributions you can just install a package from a repository, however.
 
-[Theano](http://deeplearning.net/software/theano/index.html) by Conda with all the other dependencies. If you get any error messages, or using the GPU with Theano doesn't work, check and configure it separately.
+[Theano](http://deeplearning.net/software/theano/index.html) is intalled  by Conda with all the other dependencies. If you get any error messages, or using the GPU with Theano doesn't work, check and configure it separately.
 
 ### Run the analysis
 
